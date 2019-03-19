@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH -A uot143
+#SBATCH --job-name="multiply.local"
+#SBATCH --output="multiply.local.out"
+#SBATCH --partition=shared
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --export=ALL 
+#SBATCH --time=10
+
+export PIG_HOME=/oasis/projects/nsf/uot143/fegaras/pig-0.16.0
+rm -rf output
+$PIG_HOME/bin/pig -x local -param M=M-matrix-small.txt -param N=N-matrix-small.txt -param O=output multiply.pig
