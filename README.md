@@ -1,4 +1,4 @@
-Name- Anshul Talati 
+# Name- Anshul Talati 
 
 
 Project - 1) Implementation of the Matrix Multiplication by Spark Framework and Scala as programming language.
@@ -12,3 +12,14 @@ Note - For spark Implementation
 Datasets Used - Matrix dataset M-matrix-large.txt,N-matrix-large.txt,M-matrix-small.txt, N-matrix-small.txt
 
 REference - pseudo code available on lambda.uta.edu (fall 2017 course)
+
+# Pseudo Codes
+
+* For PIG 
+	select M.I, N.J, SUM( M.V * N.V )
+	from M, N
+	where M.J = N.I
+	group by M.I, N.J
+	
+* For Java 
+	
